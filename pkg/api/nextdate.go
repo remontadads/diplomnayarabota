@@ -143,7 +143,7 @@ func parseMonthDays(s string) ([]int, error) {
 	result := make([]int, 0)
 	for _, part := range strings.Split(s, ",") {
 		n, err := strconv.Atoi(strings.TrimSpace(part))
-		if err != nil || n == 0 || n > 31 || n < -31 {
+		if err != nil || n == 0 || n > 31 || n < -2 {
 			return nil, fmt.Errorf("invalid month day: %q", part)
 		}
 		result = append(result, n)
